@@ -1,0 +1,22 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double excellentResult = double.Parse(Console.ReadLine());
+
+
+            if (excellentResult >= 5.50)
+            {
+                Console.WriteLine("Excellent!");
+            } else
+            {
+                Console.WriteLine("");
+            }
+            
+        }
+    }
+}
