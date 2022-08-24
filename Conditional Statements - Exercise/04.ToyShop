@@ -1,0 +1,47 @@
+using System;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double priceTrip = double.Parse(Console.ReadLine());
+            int puzzles = int.Parse(Console.ReadLine());
+            int talkingDolls = int.Parse(Console.ReadLine());
+            int teddyBears = int.Parse(Console.ReadLine());
+            int minions = int.Parse(Console.ReadLine());
+            int truckToys = int.Parse(Console.ReadLine());
+            double puzzleValue = 2.60 * puzzles;
+            int talkingDollValue = 3 * talkingDolls;
+            double teddyBearValue = 4.10 * teddyBears;
+            double minionValue = 8.20 * minions;
+            int truckValue = 2 * truckToys;
+            double toysCount = puzzles + talkingDolls + teddyBears + minions + truckToys;
+            double totalValue = puzzleValue + talkingDollValue + teddyBearValue + minionValue + truckValue;
+
+            if (toysCount >= 50)
+            {
+                totalValue -= totalValue * 0.25;
+            }
+
+            double rent = 0.10;
+
+            totalValue -= totalValue * rent;
+
+            if (totalValue >= priceTrip)
+            {
+                Console.WriteLine($"Yes! {totalValue - priceTrip:f2} lv left.");
+            }
+            else
+            {
+                Console.WriteLine($"Not enough money! {priceTrip - totalValue:f2} lv needed.");
+            }
+
+
+
+
+        }
+    }
+}
