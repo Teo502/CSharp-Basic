@@ -1,0 +1,37 @@
+using System;
+
+namespace Conditional_Statements___Exercize_Part_2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            double budgetPetyr = double.Parse(Console.ReadLine());
+            int videoCards = int.Parse(Console.ReadLine());
+            int processors = int.Parse(Console.ReadLine());
+            int ram = int.Parse(Console.ReadLine());
+            int videoCardValue = 250 * videoCards;
+            double processorValue = (videoCardValue * 0.35)*processors;
+            double ram2 = ram * 0.10;
+            double ramValue = videoCardValue * ram2;
+            double totalValueParts = videoCardValue + processorValue + ramValue; 
+            
+
+
+            if (videoCards > processors)
+            {
+                totalValueParts -= totalValueParts * 0.15;
+            }
+            
+
+            if (totalValueParts <= budgetPetyr)
+            {
+                Console.WriteLine($"You have {budgetPetyr - totalValueParts:f2} leva left!");
+            } 
+            else
+            {
+                Console.WriteLine($"Not enough money! You need {totalValueParts - budgetPetyr:f2} leva more!");
+            }
+        }
+    }
+}
